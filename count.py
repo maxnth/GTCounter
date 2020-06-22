@@ -6,8 +6,8 @@ from pathlib import Path
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Counts amount of Ground Truth line in all PAGE XML files of a "
-                                                 "directory")
+    parser = argparse.ArgumentParser(description="Counts the amount of Ground Truth lines in all PAGE XML files"
+                                                 "contained by a directory")
 
     parser.add_argument("-d", "--directory", help="Directory containing PAGE XML files", default=Path.cwd())
     parser.add_argument("-i", "--index", help="Index marking ground truth TextEquiv elements", default=0, type=int)
