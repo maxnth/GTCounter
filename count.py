@@ -25,7 +25,8 @@ if __name__ == "__main__":
 
     utils.cprint("Counting ground truth…")
     counter = Counter(path=Path(args["directory"]), index=args["index"])
-    utils.cprint(f"\nThis directory contains {counter.get_count()} lines of ground truth.\n", style="b")
+    input_type = "directory" if Path(args["directory"]).is_dir() else "file"
+    utils.cprint(f"\nThis {input_type} contains {counter.get_count()} lines of ground truth.\n", style="b")
 
     if args["stats"]:
         counter.export_stats(Path(args["stats_out"]))
